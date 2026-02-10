@@ -1,0 +1,19 @@
+services:
+  postgres:
+    # Official Postgres image (version 15)
+    image: postgres:15
+
+    # Container name for easier debugging and connection
+    container_name: sales_postgres
+
+    environment:
+      # Database credentials created on startup
+      POSTGRES_USER: sales_user
+      POSTGRES_PASSWORD: sales_pass
+      POSTGRES_DB: sales_db
+
+    ports:
+      # Expose Postgres to the host machine
+      # Host port 5432 -> Container port 5432
+      - "5432:5432"
+

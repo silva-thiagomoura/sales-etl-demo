@@ -1,0 +1,115 @@
+2026-02-06 11:14:52,766 | INFO | Config loaded successfully
+2026-02-06 11:14:55,912 | INFO | Spark session created
+2026-02-06 11:14:55,912 | INFO | Extracting data from data/raw/sales.csv
+2026-02-06 11:15:07,468 | INFO | Transforming data
+2026-02-06 11:15:07,827 | INFO | Loading data into Postgres (incremental)
+2026-02-06 11:15:11,573 | ERROR | ETL failed with error: 
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1231, in main
+    func, profiler, deserializer, serializer = read_udfs(pickleSer, infile, eval_type)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1067, in read_udfs
+    udfs.append(read_single_udf(pickleSer, infile, eval_type, runner_conf, udf_index=i))
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 529, in read_single_udf
+    f, return_type = read_command(pickleSer, infile)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 90, in read_command
+    command = serializer._read_with_length(file)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 174, in _read_with_length
+    return self.loads(obj)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 472, in loads
+    return cloudpickle.loads(obj, encoding=encoding)
+ModuleNotFoundError: No module named 'encryption'
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/src/main.py", line 41, in main
+    load_sales_incremental(transformed_df, cfg, state_path)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/src/load.py", line 37, in load_sales_incremental
+    df.write.jdbc(
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1984, in jdbc
+    self.mode(mode)._jwrite.jdbc(url, table, jprop)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.PythonException: 
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1231, in main
+    func, profiler, deserializer, serializer = read_udfs(pickleSer, infile, eval_type)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1067, in read_udfs
+    udfs.append(read_single_udf(pickleSer, infile, eval_type, runner_conf, udf_index=i))
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 529, in read_single_udf
+    f, return_type = read_command(pickleSer, infile)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 90, in read_command
+    command = serializer._read_with_length(file)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 174, in _read_with_length
+    return self.loads(obj)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 472, in loads
+    return cloudpickle.loads(obj, encoding=encoding)
+ModuleNotFoundError: No module named 'encryption'
+
+2026-02-06 11:15:12,208 | INFO | Spark stopped
+2026-02-06 11:21:43,417 | INFO | Config loaded successfully
+2026-02-06 11:21:46,867 | INFO | Spark session created
+2026-02-06 11:21:46,867 | INFO | Extracting data from data/raw/sales.csv
+2026-02-06 11:21:58,965 | INFO | Transforming data
+2026-02-06 11:21:59,357 | INFO | Loading data into Postgres (incremental)
+2026-02-06 11:22:03,669 | ERROR | ETL failed with error: 
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1231, in main
+    func, profiler, deserializer, serializer = read_udfs(pickleSer, infile, eval_type)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1067, in read_udfs
+    udfs.append(read_single_udf(pickleSer, infile, eval_type, runner_conf, udf_index=i))
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 529, in read_single_udf
+    f, return_type = read_command(pickleSer, infile)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 90, in read_command
+    command = serializer._read_with_length(file)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 174, in _read_with_length
+    return self.loads(obj)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 472, in loads
+    return cloudpickle.loads(obj, encoding=encoding)
+ModuleNotFoundError: No module named 'encryption'
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/src/main.py", line 41, in main
+    load_sales_incremental(transformed_df, cfg, state_path)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/src/load.py", line 37, in load_sales_incremental
+    df.write.jdbc(
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1984, in jdbc
+    self.mode(mode)._jwrite.jdbc(url, table, jprop)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.PythonException: 
+  An exception was thrown from the Python worker. Please see the stack trace below.
+Traceback (most recent call last):
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1231, in main
+    func, profiler, deserializer, serializer = read_udfs(pickleSer, infile, eval_type)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 1067, in read_udfs
+    udfs.append(read_single_udf(pickleSer, infile, eval_type, runner_conf, udf_index=i))
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 529, in read_single_udf
+    f, return_type = read_command(pickleSer, infile)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/worker.py", line 90, in read_command
+    command = serializer._read_with_length(file)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 174, in _read_with_length
+    return self.loads(obj)
+  File "/Users/thiagomoura/Documents/projetos/sales-etl-pyspark/.venv/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/serializers.py", line 472, in loads
+    return cloudpickle.loads(obj, encoding=encoding)
+ModuleNotFoundError: No module named 'encryption'
+
+2026-02-06 11:22:04,158 | INFO | Spark stopped
+2026-02-06 11:42:53,156 | INFO | Starting Sales ETL...
+2026-02-06 11:42:53,159 | INFO | Config loaded successfully
+2026-02-06 11:42:56,307 | INFO | Spark session created
+2026-02-06 11:42:56,307 | INFO | Extracting data from: data/raw/sales.csv
+2026-02-06 11:43:07,993 | INFO | Transforming data (DQ + schema mapping)
+2026-02-06 11:43:08,395 | INFO | Loading data into Postgres (incremental)
+2026-02-06 11:43:08,395 | INFO | No watermark found. Running full load (first run).
+2026-02-06 11:43:17,915 | INFO | Watermark updated: last_transaction_id=50000
+2026-02-06 11:43:17,916 | INFO | ETL finished successfully
+2026-02-06 11:43:18,611 | INFO | Spark stopped
+2026-02-06 13:53:11,715 | INFO | Notebook ETL started
+2026-02-06 14:10:35,907 | INFO | No watermark found. Running full load (first run).
+2026-02-07 14:21:40,017 | INFO | Notebook ETL started
+2026-02-07 14:41:43,918 | INFO | Notebook ETL started
+2026-02-10 10:51:57,398 | INFO | Notebook ETL started

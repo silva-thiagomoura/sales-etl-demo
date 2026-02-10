@@ -1,0 +1,43 @@
+app:
+  # Application logical name (useful for logs and future orchestration)
+  name: sales_etl
+
+paths:
+  # Where raw input files are stored
+  raw_data_dir: data/raw
+
+  # Where ETL state is stored (watermark, checkpoints, etc.)
+  state_dir: data/state
+
+spark:
+  # Local Spark mode using all available CPU cores
+  # In production this could be: yarn, k8s, or spark://cluster
+  master: local[*]
+
+  # Spark application name (visible in Spark UI)
+  app_name: sales_etl_spark
+
+  # Controls Spark shuffle parallelism
+  # For local mode: keep low (2-8). For cluster: scale with executors.
+  shuffle_partitions: 4
+
+etl:
+  # Reserved for future concurrency (threads, multi-file loads, etc.)
+  max_workers: 4
+
+db:
+  # JDBC connection string for Postgres
+  url: jdbc:postgresql://localhost:5432/sales_db
+
+  # Postgres user (non-root recommended)
+  user: sales_user
+
+  # Name of the environment variable holding the DB password
+  # This avoids hardcoding passwords in Git.
+  password_env: DB_PASSWORD
+
+  # JDBC driver class name
+  driver: org.postgresql.Driver
+
+  # Destination table name
+  table: sales
