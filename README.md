@@ -16,23 +16,23 @@ Features:
 
 Project Structure:
 
-data/                 # Raw and intermediate data
-jars/                 # Any required JAR files for Spark/Postgres
-logs/                 # ETL run logs (if saving locally)
-notebooks/            # Supporting notebooks (optional)
-src/                  # Python modules with ETL logic
-  ├─ extract.py       # Functions to read raw data
-  ├─ transform.py     # Data cleaning and transformations
-  ├─ load.py          # Incremental load & Parquet saving
-  ├─ encryption.py    # Column encryption functions
-  ├─ config.py        # Configuration loader from YAML
-  └─ logger.py        # ETL run logging functions
-Sales_ETL_End_to_End_Demo-Copy1.ipynb  # Jupyter notebook demo
-config.yaml           # Project configuration file
-docker-compose.yml    # Optional Docker setup (Postgres container)
-requirements.txt      # Python dependencies
-src.zip               # Optional zipped source folder for reuse
-main.py               # Python script to run ETL outside Jupyter
+data/ # Raw and intermediate data
+jars/ # Any required JAR files for Spark/Postgres
+logs/ # ETL run logs (if saving locally)
+notebooks/ # Supporting notebooks (optional)
+src/ # Python modules with ETL logic
+├─ extract.py # Functions to read raw data
+├─ transform.py # Data cleaning and transformations
+├─ load.py # Incremental load & Parquet saving
+├─ encryption.py # Column encryption functions
+├─ config.py # Configuration loader from YAML
+└─ logger.py # ETL run logging functions
+Sales_ETL_End_to_End_Demo-Copy1.ipynb # Jupyter notebook demo
+config.yaml # Project configuration file
+docker-compose.yml # Optional Docker setup (Postgres container)
+requirements.txt # Python dependencies
+src.zip # Optional zipped source folder for reuse
+main.py # Python script to run ETL outside Jupyter
 
 
 Running the Project
